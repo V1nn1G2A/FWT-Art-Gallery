@@ -1,0 +1,147 @@
+@import '../../variables.scss';
+
+.pictureCard {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  max-width: 280px;
+  max-height: 185px;
+  aspect-ratio: 280 / 185;
+  justify-self: center;
+  align-self: center;
+  cursor: pointer;
+  overflow: hidden;
+
+  &_image {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+
+    &:hover {
+      transform: scale(1.03);
+      transform-origin: center;
+      transition: transform 0.3s ease-in-out;
+    }
+  }
+
+  &_info {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 84.3%;
+    height: 24.5%;
+    padding: 8px 12px;
+    box-sizing: border-box;
+    overflow: hidden;
+    background-color: $primaryBlack;
+    transition: background-color 0.3s ease-in-out;
+  }
+
+  &_title {
+    color: $primaryWhite;
+    font-size: $font-size-medium;
+    font-family: $font-family-cormorant;
+    transition: transform 0.3s ease;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    box-sizing: border-box;
+    margin: 0 0 6px;
+  }
+
+  &_subTitle {
+    color: $accentGold;
+    font-size: $font-size-small;
+    font-family: 'Inter';
+    transition: transform 0.3s ease;
+  }
+
+  &_title,
+  &_subTitle {
+    display: flex;
+  }
+
+  &_button {
+    background-color: $accentGold;
+    border: none;
+    outline: none;
+    position: absolute;
+    bottom: 0;
+    left: 84.3%;
+    height: 24.5%;
+    width: 24px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 0 3px 0 5px;
+
+    & svg {
+      transform: rotate(0deg);
+      transition: transform 0.3s ease-in-out;
+    }
+
+    &_active svg {
+      transform: rotate(180deg);
+      transition: transform 0.3s ease-in-out;
+    }
+  }
+}
+
+@media (min-width: 768px) {
+  .pictureCard {
+    max-width: 352px;
+    max-height: 220px;
+    aspect-ratio: 352 / 220;
+
+    &_info {
+      height: 30%;
+      width: 85%;
+      padding: 12px;
+    }
+
+    &_title {
+      font-size: $font-size-large;
+      margin-bottom: 8px;
+    }
+
+    &_subTitle {
+      font-size: $font-size-medium;
+    }
+
+    &_button {
+      left: 85%;
+      height: 30%;
+    }
+  }
+}
+
+@media (min-width: 1024px) {
+  .pictureCard {
+    aspect-ratio: 392 / 260;
+    max-width: 392px;
+    max-height: 260px;
+
+    &_info {
+      padding: 20px;
+      width: 76.6%;
+      height: 31.5%;
+
+      &::before {
+        content: '';
+        position: absolute;
+        top: 20px;
+        bottom: 20px;
+        left: 0;
+        border-left: 2px solid;
+        border-color: $accentGold;
+      }
+    }
+
+    &_button {
+      display: none;
+    }
+  }
+}
