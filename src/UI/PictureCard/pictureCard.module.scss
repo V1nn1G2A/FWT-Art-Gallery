@@ -36,12 +36,12 @@
     padding: 8px 12px;
     box-sizing: border-box;
     overflow: hidden;
-    background-color: $primaryBlack;
+    background-color: var(--primary-color);
     transition: background-color 0.3s ease-in-out;
   }
 
   &_title {
-    color: $primaryWhite;
+    color: var(--text-color);
     font-size: $font-size-medium;
     font-family: $font-family-cormorant;
     transition: transform 0.3s ease;
@@ -53,7 +53,7 @@
   }
 
   &_subTitle {
-    color: $accentGold;
+    color: var(--accent-color);
     font-size: $font-size-small;
     font-family: 'Inter';
     transition: transform 0.3s ease;
@@ -65,7 +65,7 @@
   }
 
   &_button {
-    background-color: $accentGold;
+    background-color: var(--accent-color);
     border: none;
     outline: none;
     position: absolute;
@@ -83,7 +83,7 @@
       transition: transform 0.3s ease-in-out;
     }
 
-    &_active svg {
+    &__active svg {
       transform: rotate(180deg);
       transition: transform 0.3s ease-in-out;
     }
@@ -92,9 +92,9 @@
 
 @media (min-width: 768px) {
   .pictureCard {
+    aspect-ratio: 352 / 220;
     max-width: 352px;
     max-height: 220px;
-    aspect-ratio: 352 / 220;
 
     &_info {
       height: 30%;

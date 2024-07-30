@@ -1,3 +1,4 @@
+import { useState } from 'react';
 import styles from './pictureCard.module.scss';
 
 export interface PictureCardProps {
@@ -8,6 +9,8 @@ export interface PictureCardProps {
 }
 
 function PictureCard({ title, subTitle, image, onClick }: PictureCardProps) {
+  const [active, setActive] = useState(false);
+
   return (
     <li className={styles.pictureCard}>
       <img
@@ -22,10 +25,13 @@ function PictureCard({ title, subTitle, image, onClick }: PictureCardProps) {
         </p>
       </div>
       <button
-        className={`${styles.pictureCard_button}`}
+        className={`${styles.pictureCard_button} ${active ? styles.pictureCard_button__active : ''}`}
         type="button"
         aria-label="Author + Location"
-        onClick={onClick}
+        onClick={() => {
+          setActive(!active);
+          onClick();
+        }}
       >
         <svg
           width="16"
