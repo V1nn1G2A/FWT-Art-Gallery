@@ -22,13 +22,6 @@ export const Primary: Story = {
     title: 'The ninth wave',
     subTitle: '1703',
     image: 'https://test-front.framework.team/images/The_ninth_wave.jpeg',
-  },
-};
-
-export const Secondary: Story = {
-  args: {
-    title: 'The ninth wave',
-    subTitle: '1806',
-    image: 'https://test-front.framework.team/images/The_ninth_wave.jpeg',
+    theme: 'light',
   },
 };

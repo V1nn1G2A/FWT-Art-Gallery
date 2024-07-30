@@ -5,27 +5,33 @@ export interface PictureCardProps {
   title: string;
   subTitle: string;
   image: string;
+  theme: 'light' | 'dark';
   onClick: () => void;
 }
 
-function PictureCard({ title, subTitle, image, onClick }: PictureCardProps) {
+function PictureCard({
+  title,
+  subTitle,
+  image,
+  theme,
+  onClick,
+}: PictureCardProps) {
   const [active, setActive] = useState(false);
+  const themeClass = `pictureCard--${theme}`;
 
   return (
-    <li className={styles.pictureCard}>
+    <li className={`${styles.pictureCard} ${styles[themeClass]}`}>
       <img
         className={styles.pictureCard_image}
         src={`${image}`}
         alt="pictureCard"
       />
       <div className={styles.pictureCard_info}>
-        <h3 className={`${styles.pictureCard_title}`}>{title.toUpperCase()}</h3>
-        <p className={`${styles.pictureCard_subTitle}`}>
-          {subTitle.toUpperCase()}
-        </p>
+        <h3 className={styles.pictureCard_title}>{title.toUpperCase()}</h3>
+        <p className={styles.pictureCard_subTitle}>{subTitle.toUpperCase()}</p>
       </div>
       <button
-        className={`${styles.pictureCard_button} ${active ? styles.pictureCard_button__active : ''}`}
+        className={`${styles.pictureCard_button} ${styles[`pictureCard_button__${active ? 'active' : ''}`]}`}
         type="button"
         aria-label="Author + Location"
         onClick={() => {
