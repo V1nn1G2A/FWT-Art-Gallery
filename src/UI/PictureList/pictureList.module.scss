@@ -1,0 +1,59 @@
+@import '../../variables.scss';
+
+.pictureList {
+  display: grid;
+  gap: 20px;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  justify-content: stretch;
+  position: relative;
+  width: 100%;
+}
+
+.error {
+  font-size: $font-size-large;
+  color: $primaryLightGray;
+}
+
+.noMatches {
+  &_result {
+    font-size: $font-size-medium;
+    color: $primaryLightGray;
+    line-height: 22.4px;
+    margin-bottom: 16px;
+  }
+
+  &_findString {
+    background-color: $primaryBlack;
+    color: $primaryLightGray;
+    font-size: $font-size-medium;
+    padding: 0;
+    font-weight: bold;
+    border: none;
+    outline: none;
+    cursor: pointer;
+  }
+
+  &_tryAgain {
+    color: $secondaryGrey;
+    font-size: $font-size-medium;
+  }
+}
+
+@media (min-width: 392px) {
+  .pictureList {
+    grid-template-columns: repeat(auto-fit, minmax(342px, 1fr));
+  }
+}
+
+@media (min-width: 768px) {
+  .pictureList {
+    gap: 24px;
+  }
+}
+
+@media (min-width: 1024px) {
+  .pictureList {
+    gap: 32px;
+    grid-template-columns: repeat(auto-fit, minmax(342px, 1fr));
+  }
+}
