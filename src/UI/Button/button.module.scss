@@ -1,0 +1,151 @@
+@import '../../variables.scss';
+
+.button {
+  font-size: $font-size-medium;
+  font-weight: $font-weight-bold;
+  cursor: pointer;
+  transition: all 0.3s ease-in-out;
+  display: flex;
+  align-items: center;
+  border: none;
+  outline: none;
+
+  &--primary {
+    padding: 16px 74.5px;
+    border-radius: 100px;
+    transition: all 0.3s ease-in-out;
+
+    &:disabled {
+      opacity: 0.5;
+    }
+  }
+
+  &--text {
+    padding: 0;
+    background-color: rgb(0, 0, 0, 0);
+    display: flex;
+    align-items: center;
+  }
+
+  &--basket,
+  &--basketOnImage {
+    border-radius: 4px;
+    width: 28px;
+    height: 28px;
+    padding: 0;
+  }
+
+  &_icon {
+    &--text {
+      margin-right: 12px;
+    }
+
+    &--basket,
+    &--basketOnImage {
+      width: 24px;
+      height: 24px;
+      margin: auto;
+    }
+
+    &--basket:disabled,
+    &--basketOnImage:disabled {
+      opacity: 0.5;
+    }
+
+    &--basketOnImage {
+      background-color: rgb(0, 0, 0, 10%);
+    }
+  }
+  &_label {
+    &--text {
+      border-bottom: 1px solid;
+    }
+  }
+}
+
+.button--dark {
+  &.button {
+    &--primary {
+      background-color: $accentGold;
+      color: $primaryWhite;
+
+      &:hover,
+      &:focus {
+        box-shadow: 0px 4px 10px 0px $accentGold;
+      }
+    }
+
+    &--text {
+      color: $primaryLightGray;
+      border-color: $primaryLightGray;
+
+      &:hover,
+      &:focus {
+        color: $primaryWhite;
+        border-color: $primaryWhite;
+      }
+
+      &:disabled {
+        color: $secondaryGrey;
+        border-color: $secondaryGrey;
+      }
+    }
+
+    &--basket {
+      background-color: $secondaryBlack;
+
+      & svg {
+        fill: $primaryLightGray;
+      }
+
+      &_icon:hover & svg,
+      &_icon:focus & svg {
+        fill: $primaryWhite;
+      }
+    }
+  }
+}
+
+.button--light {
+  &.button {
+    &--primary {
+      background-color: $primaryBlack;
+      color: $primaryWhite;
+      transition: all 0.3s ease-in-out;
+
+      &:hover,
+      &:focus {
+        box-shadow: 0px 4px 10px 0px $primaryBlack;
+      }
+    }
+
+    &--text {
+      color: $primaryDarkGray;
+      border-color: $primaryDarkGray;
+
+      &:hover,
+      &:focus {
+        color: $primaryBlack;
+        border-color: $primaryBlack;
+      }
+
+      &:disabled {
+        color: $primaryLightGray;
+        border-color: $primaryLightGray;
+      }
+    }
+
+    &--basket {
+      background-color: $secondaryWhite;
+
+      & svg {
+        fill: $primaryDarkGray;
+      }
+
+      &:hover & svg,
+      &:focus & svg {
+        background-color: $primaryBlack;
+      }
+    }
+  }
+}
