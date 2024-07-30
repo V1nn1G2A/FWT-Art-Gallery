@@ -15,6 +15,15 @@
     "build-storybook": "storybook build",
     "typecheck": "tsc"
   },
+  "lint-staged": {
+    "*.{js,jsx,ts,tsx}": [
+      "prettier --write",
+      "eslint --fix"
+    ],
+    "*.{css,scss,md}": [
+      "prettier --write"
+    ]
+  },
   "dependencies": {
     "@storybook/test": "^8.2.6",
     "@types/glob": "^7.1.1",
@@ -32,6 +41,7 @@
     "@storybook/addon-links": "^8.2.6",
     "@storybook/addon-onboarding": "^8.2.6",
     "@storybook/blocks": "^8.2.6",
+    "@storybook/builder-vite": "^8.2.6",
     "@storybook/react": "^8.2.6",
     "@storybook/react-vite": "^8.2.6",
     "@types/react": "^18.3.3",
@@ -55,10 +65,5 @@
     "storybook": "^8.2.6",
     "typescript": "^5.5.4",
     "vite": "^5.3.4"
-  },
-  "lint-staged": {
-    "*.ts": "npx tsc --noEmit",
-    "*.{js,jsx,ts,tsx}": "npx eslint",
-    "*.{js,jsx,ts,tsx,html,css,scss}": "npx prettier --check"
   }
 }
