@@ -1,0 +1,48 @@
+@import '../../variables.scss';
+
+.header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 10;
+  padding: 36px 0;
+  transition: all 0.3s ease-in-out;
+
+  &_content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  &_burger {
+    display: block;
+    cursor: pointer;
+  }
+}
+
+.header--light {
+  background-color: $primaryWhite;
+
+  &_burger {
+    color: $primaryBlack;
+  }
+}
+
+.header--dark {
+  background-color: $primaryBlack;
+
+  &_burger {
+    color: $primaryLightGrey;
+  }
+}
+
+@media (min-width: 1024px) {
+  .header {
+    padding: 20px 0;
+
+    &_burger {
+      display: none;
+    }
+  }
+}

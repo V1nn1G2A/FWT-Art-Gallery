@@ -1,0 +1,15 @@
+@import '../../variables.scss';
+
+.noAuthMainPage {
+  display: flex;
+  padding: 180px 0 100px;
+  justify-content: center;
+}
+
+.noAuthMainPage--light {
+  background-color: $primaryWhite;
+}
+
+.noAuthMainPage--dark {
+  background-color: $primaryBlack;
+}

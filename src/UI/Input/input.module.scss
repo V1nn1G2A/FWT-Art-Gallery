@@ -1,0 +1,59 @@
+@import '../../variables.scss';
+
+.input {
+  width: 100%;
+  padding: 12px 16px;
+  border: 1px solid;
+  border-radius: 4px;
+  transition: all 0.3s ease-in-out;
+
+  &::placeholder {
+    font-weight: 300;
+    font-size: $font-size-large;
+  }
+}
+
+.input--dark {
+  border-color: $secondaryBlack;
+  color: $primaryLightGrey;
+  background-color: $secondaryBlack;
+
+  &:hover {
+    border-color: $primaryDarkGrey;
+  }
+
+  &:focus {
+    border-color: $primaryLightGrey;
+  }
+
+  &::placeholder {
+    color: $secondaryGrey;
+  }
+}
+
+.input--light {
+  border-color: $primaryLightGrey;
+  color: $primaryDarkGrey;
+  background-color: $primaryWhite;
+
+  &:hover {
+    border-color: $secondaryGrey;
+  }
+
+  &:focus {
+    border-color: $primaryDarkGrey;
+  }
+
+  &::placeholder {
+    color: $secondaryGrey;
+  }
+}
+
+.inputError {
+  border-color: $accentRed;
+
+  &:hover,
+  &:focus {
+    border-color: $accentRed;
+  }
+}

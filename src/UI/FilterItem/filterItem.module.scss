@@ -1,0 +1,44 @@
+@import '../../variables.scss';
+
+.filterItem {
+  font-size: $font-size-medium;
+  font-weight: 300;
+  cursor: pointer;
+  border: none;
+  outline: none;
+  padding: 0;
+  margin: 0;
+  background-color: transparent;
+  transition: all 0.3s ease-in-out;
+}
+
+.filterItem--active {
+  font-weight: $font-size-small;
+  color: $primaryBlack;
+}
+
+.filterItem--dark {
+  color: $primaryLightGrey;
+
+  &:hover {
+    color: $primaryWhite;
+  }
+
+  &.filterItem--active {
+    font-weight: $font-size-small;
+    color: $primaryBlack;
+  }
+}
+
+.filterItem--light {
+  color: $primaryDarkGrey;
+
+  &:hover {
+    color: $primaryBlack;
+  }
+
+  &.filterItem--active {
+    font-weight: $font-size-small;
+    color: $primaryBlack;
+  }
+}
