@@ -1,0 +1,23 @@
+.menuContainer {
+  display: none;
+  grid-auto-flow: column;
+  gap: 60px;
+  align-items: center;
+
+  &_inner {
+    display: grid;
+    grid-auto-flow: column;
+    gap: 20px;
+    align-items: center;
+
+    > *:last-child {
+      margin-left: 40px;
+    }
+  }
+}
+
+@media (min-width: 1024px) {
+  .menuContainer {
+    display: grid;
+  }
+}
