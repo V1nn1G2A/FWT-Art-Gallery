@@ -14,11 +14,11 @@ function Footer() {
       <div className="container">
         <div className={styles.footer_content}>
           <p className={styles.footer_text}>
-            <p className={styles.footer_project}>
+            <span className={styles.footer_project}>
               Проект реализован в рамках стажировки для Frontend-разработчиков
               от компании{' '}
               <span className={styles.footer_companyName}>Framework Team</span>
-            </p>
+            </span>
             <span className={styles.footer_author}>Филиппов Кирилл 2024</span>
           </p>
           <div

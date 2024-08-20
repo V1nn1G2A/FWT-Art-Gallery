@@ -1,0 +1,81 @@
+@import '../../variables.scss';
+
+.toast {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  max-width: 320px;
+  padding: 8px 16px;
+  border-radius: 4px;
+  border: 1px solid;
+
+  &_content {
+    display: flex;
+    align-items: center;
+    flex-direction: row;
+    gap: 8px;
+  }
+
+  &_error {
+    display: flex;
+    align-items: center;
+    gap: 4px;
+    color: $accentError;
+  }
+
+  &_errorText {
+    font-size: $font-size-large;
+    font-weight: $font-weight-light;
+  }
+
+  &_errorMessage {
+    margin-left: 0px;
+    font-size: $font-size-medium;
+  }
+
+  > *:last-child {
+    align-self: center;
+  }
+}
+
+.toast--light {
+  background-color: $secondaryWhite;
+  border-color: $primaryLightGrey;
+
+  &.toast_errorMessage {
+    color: $primaryDarkGrey;
+  }
+}
+
+.toast--dark {
+  background-color: $secondaryBlack;
+  border-color: $secondaryBlack;
+
+  &.toast_errorMessage {
+    color: $primaryLightGrey;
+  }
+}
+
+@media (min-width: 768px) {
+  .toast {
+    max-width: 441px;
+    padding: 12px 20px;
+    border-left: 4px solid $accentError;
+
+    &_content {
+      flex-direction: column;
+    }
+
+    &_errorMessage {
+      margin-left: 28px;
+    }
+    > *:last-child {
+      align-self: start;
+      & span {
+        width: 16px;
+        height: 16px;
+      }
+    }
+  }
+}

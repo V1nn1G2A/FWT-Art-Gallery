@@ -6,19 +6,13 @@ const useOutsideClick = (callback: () => void) => {
   useEffect(() => {
     const handleClick = (event: MouseEvent) => {
       if (ref.current && !ref.current.contains(event.target as Node)) {
-        const targetStyles = getComputedStyle(ref.current);
-
-        if (targetStyles.getPropertyValue('pointer-events') !== 'none') {
-          callback();
-        }
+        callback();
       }
     };
 
     document.addEventListener('mousedown', handleClick);
-
-    return () => {
-      document.removeEventListener('mousedown', handleClick);
-    };
+    // Рефакторинг: короткая запись стрелки
+    return () => document.removeEventListener('mousedown', handleClick);
   }, [callback]);
 
   return ref;

@@ -1,0 +1,25 @@
+@import '../../variables.scss';
+
+.tagSelector {
+  display: inline-flex;
+  flex-wrap: nowrap;
+  gap: 8px;
+  align-items: center;
+  padding: 8px 16px;
+  border-radius: 100px;
+  font-weight: $font-weight-light;
+  font-size: $font-size-medium;
+  border: 1px solid;
+}
+
+.tagSelector--dark {
+  color: $primaryLightGrey;
+  background-color: #cdcdcd0d;
+  border-color: $primaryWhite;
+}
+
+.tagSelector--light {
+  color: $primaryDarkGrey;
+  background-color: rgb($primaryBlack, 5%);
+  border-color: rgb($primaryBlack, 5%);
+}

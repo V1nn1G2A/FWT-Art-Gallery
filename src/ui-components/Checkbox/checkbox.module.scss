@@ -1,0 +1,67 @@
+@import '../../variables.scss';
+
+.checkbox {
+  appearance: none;
+  border: 1px solid;
+  border-radius: 4px;
+  height: 24px;
+  width: 24px;
+  vertical-align: text-bottom;
+  position: relative;
+  transition: border-color 0.3s ease-in-out background-color 0.3s ease-in-out;
+
+  &::before {
+    content: '';
+    position: absolute;
+    margin: auto;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    overflow: hidden;
+    top: 0;
+    transition: all 0.3s ease-in-out;
+  }
+
+  &:checked::before {
+    border-right: 2px solid;
+    border-bottom: 2px solid;
+    height: 65%;
+    width: 40%;
+    transform: rotate(45deg) translateY(-10%) translateX(-15%);
+    transition: border-color 0.3s ease-in-out;
+  }
+}
+
+.checkbox--dark {
+  border-color: $primaryBlack;
+  background-color: $primaryBlack;
+
+  &:checked:before {
+    border-color: $primaryLightGrey;
+  }
+}
+
+.checkbox--light {
+  border-color: $primaryLightGrey;
+  background-color: $secondaryWhite;
+
+  &:checked:before {
+    border-color: $primaryDarkGrey;
+  }
+}
+
+.checkboxLabel {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  cursor: pointer;
+  font-size: $font-size-large;
+}
+
+.checkboxLabel--dark {
+  color: $primaryLightGrey;
+}
+
+.checkboxLabel--light {
+  color: $primaryDarkGrey;
+}

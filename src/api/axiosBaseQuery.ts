@@ -2,7 +2,7 @@ import axios from 'axios';
 import type { BaseQueryFn } from '@reduxjs/toolkit/query';
 import type { AxiosRequestConfig, AxiosError } from 'axios';
 import { Mutex } from 'async-mutex';
-import { setToken, clearToken } from '../store/slices/authSlice';
+import { setToken, clearToken } from '../store/reducers/authSlice';
 import type { RootState } from '../store/store';
 
 const mutex = new Mutex();
@@ -36,6 +36,7 @@ const baseQuery: BaseQueryFn<
       params,
       headers,
     });
+
     return { data: result.data };
   } catch (axiosError) {
     const error = axiosError as AxiosError;

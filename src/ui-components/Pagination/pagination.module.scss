@@ -1,0 +1,102 @@
+@import '../../variables.scss';
+
+.pagination {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  gap: 4px;
+  width: 100%;
+
+  &_item {
+    cursor: pointer;
+    width: 24px;
+    height: 24px;
+    display: flex;
+    align-items: center;
+    box-sizing: border-box;
+    transition: all 0.3s ease-in-out;
+
+    &:first-child {
+      margin-right: 16px;
+    }
+
+    &:last-child {
+      margin-left: 16px;
+    }
+  }
+
+  &_button {
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 100%;
+    background-color: transparent;
+    border: none;
+    border-radius: 4px;
+    outline: none;
+    font-size: $font-size-large;
+    font-weight: 300;
+    transition: all 0.3s ease-in-out;
+
+    &:hover {
+      font-weight: $font-weight-light;
+    }
+
+    &--prev {
+      transform: rotate(180deg);
+    }
+
+    &--active {
+      font-weight: $font-weight-light;
+    }
+  }
+
+  &_selected {
+    font-weight: $font-weight-light;
+  }
+}
+
+.pagination--dark {
+  & .pagination_button {
+    color: $primaryLightGrey;
+
+    &--active {
+      background-color: $secondaryBlack;
+      border-color: $secondaryBlack;
+    }
+
+    &--prev,
+    &--next {
+      &:hover {
+        color: $primaryWhite;
+      }
+    }
+  }
+}
+
+.pagination--light {
+  & .pagination_button {
+    color: $primaryDarkGrey;
+
+    &--active {
+      background: #1212120d;
+      border-color: #1212120d;
+    }
+
+    &--prev,
+    &--next {
+      &:hover {
+        color: $primaryBlack;
+      }
+    }
+  }
+}
+
+@media (min-width: 392px) {
+  .pagination {
+    margin-top: 40px;
+  }
+}

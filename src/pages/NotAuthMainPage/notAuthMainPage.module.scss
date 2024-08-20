@@ -1,0 +1,27 @@
+@import '../../variables.scss';
+
+.noAuthMainPage {
+  display: flex;
+  padding: 144px 0 100px;
+  justify-content: center;
+}
+
+.noAuthMainPage--light {
+  background-color: $primaryWhite;
+}
+
+.noAuthMainPage--dark {
+  background-color: $primaryBlack;
+}
+
+@media (min-width: 768px) {
+  .noAuthMainPage {
+    padding: 188px 0 100px;
+  }
+}
+
+@media (min-width: 1024px) {
+  .noAuthMainPage {
+    padding: 188px 0 100px;
+  }
+}

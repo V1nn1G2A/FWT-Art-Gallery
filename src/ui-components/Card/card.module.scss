@@ -1,0 +1,182 @@
+@import '../../variables.scss';
+
+.card {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  aspect-ratio: 280 / 185;
+  justify-self: center;
+  align-self: center;
+  cursor: pointer;
+  overflow: hidden;
+
+  &_image {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.3s ease-in-out;
+
+    &:hover {
+      transform: scale(1.03);
+      transform-origin: center;
+      transition: transform 0.3s ease-in-out;
+    }
+  }
+
+  &_info {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 84.3%;
+    height: 24.5%;
+    padding: 8px 12px;
+    box-sizing: border-box;
+    overflow: hidden;
+    transition: all 0.3s ease-in-out;
+  }
+
+  &_title {
+    font-size: $font-size-medium;
+    font-family: $font-family-cormorant;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    transition: all 0.3s ease;
+    box-sizing: border-box;
+    margin: 0 0 4px;
+  }
+
+  &_subTitle {
+    font-size: $font-size-small;
+    font-family: 'Inter';
+    transition: transform 0.3s ease;
+  }
+
+  &_title,
+  &_subTitle {
+    display: flex;
+  }
+
+  &_button {
+    border: none;
+    outline: none;
+    position: absolute;
+    bottom: 0;
+    left: 84.3%;
+    height: 24.5%;
+    width: 24px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 0 3px 0 5px;
+    transition: all 0.3s ease-in-out;
+
+    & svg {
+      transform: rotate(0deg);
+      transition: transform 0.3s ease-in-out;
+    }
+
+    &__active svg {
+      transform: rotate(180deg);
+      transition: transform 0.3s ease-in-out;
+    }
+  }
+
+  &--dark {
+    .card_info {
+      background-color: $primaryBlack;
+
+      &:before {
+        color: $accentGold;
+      }
+    }
+
+    .card_title {
+      color: $primaryWhite;
+    }
+
+    .card_subTitle {
+      color: $accentGold;
+    }
+
+    .card_button {
+      background-color: $accentGold;
+    }
+  }
+
+  &--light {
+    .card_info {
+      background-color: $primaryWhite;
+
+      &:before {
+        color: $accentRed;
+      }
+    }
+
+    .card_title {
+      color: $primaryBlack;
+    }
+
+    .card_subTitle {
+      color: $accentRed;
+    }
+
+    .card_button {
+      background-color: $accentRed;
+    }
+  }
+}
+
+@media (min-width: 492px) {
+  .card {
+    aspect-ratio: 352 / 220;
+
+    &_info {
+      height: 30%;
+      width: 85%;
+      padding: 12px;
+    }
+
+    &_title {
+      font-size: $font-size-large;
+      margin-bottom: 9px;
+    }
+
+    &_subTitle {
+      font-size: $font-size-medium;
+    }
+
+    &_button {
+      left: 85%;
+      height: 30%;
+    }
+  }
+}
+
+@media (min-width: 768px) {
+  .card {
+    aspect-ratio: 392 / 260;
+
+    &_info {
+      padding: 23px 20px;
+      width: 76.6%;
+      height: 31.5%;
+
+      &::before {
+        content: '';
+        position: absolute;
+        top: 20px;
+        bottom: 20px;
+        left: 0;
+        border-left: 2px solid;
+      }
+    }
+
+    &_button {
+      display: none;
+    }
+  }
+}
