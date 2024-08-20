@@ -6,7 +6,7 @@
   left: 0;
   width: 100%;
   z-index: 10;
-  padding: 36px 0;
+  padding: 24px 0;
   transition: all 0.3s ease-in-out;
 
   &_content {
@@ -37,9 +37,15 @@
   }
 }
 
+@media (min-width: 768px) {
+  .header {
+    padding: 36px 0;
+  }
+}
+
 @media (min-width: 1024px) {
   .header {
-    padding: 20px 0;
+    padding: 30px 0;
 
     &_burger {
       display: none;

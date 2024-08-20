@@ -1,0 +1,240 @@
+@import '../../variables.scss';
+
+//Рефакторинг: переименовал ui в ui-components
+//Объединил стили кнопок в один файл по классам
+.buttonIcon {
+  cursor: pointer;
+  transition: all 0.3s ease-in-out;
+  display: flex;
+  align-items: center;
+  border: none;
+  outline: none;
+  padding: 0;
+
+  &:disabled {
+    cursor: default;
+  }
+
+  &_icon {
+    transition: all 0.3s ease-in-out;
+    display: flex;
+    margin: auto;
+  }
+
+  &_label {
+    transition: all 0.3s ease-in-out;
+  }
+
+  //Кнопка корзина
+  &--basket {
+    border-radius: 4px;
+    width: 28px;
+    height: 28px;
+    padding: 0;
+    border: none;
+  }
+
+  &_icon {
+    &--basket {
+      width: 24px;
+      height: 24px;
+      margin: auto;
+    }
+  }
+
+  //Кнопка корзина на изображении
+  &--basketOnImage {
+    border-radius: 4px;
+    width: 28px;
+    height: 28px;
+    padding: 0;
+    border: none;
+
+    &:disabled {
+      opacity: 0.5;
+    }
+  }
+
+  &_icon {
+    &--basketOnImage {
+      width: 24px;
+      height: 24px;
+      margin: auto;
+    }
+  }
+
+  //Кнопка переключения темы
+  &--themeButton {
+    border-radius: 100px;
+    border: none;
+    width: 40px;
+    height: 40px;
+
+    &_icon {
+      &--themeButton {
+        display: block;
+        width: 24px;
+        height: 24px;
+        margin: auto;
+      }
+    }
+  }
+
+  //Кнопка со стрелкой
+  &--arrow {
+    border-radius: 100px;
+    width: 60px;
+    height: 60px;
+    padding: 0;
+    border: 1px solid;
+  }
+
+  &_icon {
+    &--arrow {
+      transform: rotate(-90deg);
+      width: 24px;
+      height: 24px;
+      margin: auto;
+    }
+  }
+
+  //кнопка с прозрачным фоном
+  &--transparent {
+    background-color: transparent;
+  }
+
+  &_icon {
+    &--transparent {
+      display: flex;
+      margin: auto;
+    }
+  }
+}
+
+.buttonIcon--dark {
+  &.buttonIcon {
+    //Кнопка корзина
+    &--basket {
+      background-color: $secondaryBlack;
+      color: $primaryLightGrey;
+
+      &:hover,
+      &:focus {
+        color: $primaryWhite;
+      }
+
+      &:disabled {
+        background-color: $secondaryBlack;
+        color: $primaryLightGrey;
+      }
+    }
+
+    //Кнопка корзины на изображении
+
+    &--basketOnImage {
+      background-color: rgb($secondaryBlack, 90%);
+      color: $primaryLightGrey;
+
+      &:hover,
+      &:focus {
+        background-color: rgb($secondaryBlack, 80%);
+      }
+    }
+
+    //Кнопка переключения темы
+    &--themeButton {
+      background-color: $secondaryBlack;
+      color: $primaryLightGrey;
+
+      &:hover {
+        color: $primaryWhite;
+      }
+    }
+
+    //Кнопка со стрелкой
+    &--arrow {
+      background-color: $secondaryBlack;
+      color: $primaryLightGrey;
+      border-color: $secondaryBlack;
+
+      &:hover,
+      &:focus {
+        background-color: #242222;
+        border-color: #242222;
+      }
+    }
+
+    //Кнопка с прозрачным фоном
+    &--transparent {
+      color: $primaryLightGrey;
+
+      &:hover,
+      &:focus {
+        color: $primaryWhite;
+      }
+    }
+  }
+}
+
+.buttonIcon--light {
+  &.buttonIcon {
+    //Кнопка корзина
+    &--basket {
+      background-color: $secondaryWhite;
+      color: $primaryDarkGrey;
+
+      &:hover,
+      &:focus {
+        color: $primaryBlack;
+      }
+
+      &:disabled {
+        background-color: rgb($secondaryWhite, 90%);
+        color: $primaryLightGrey;
+      }
+    }
+
+    //Кнопка корзины на изображении
+    &--basketOnImage {
+      background-color: rgb($primaryWhite, 90%);
+      color: $primaryLightGrey;
+
+      &:hover,
+      &:focus {
+        background-color: rgb($primaryWhite, 80%);
+      }
+    }
+
+    //Кнопка переключения темы
+    &--themeButton {
+      background-color: $secondaryWhite;
+      color: $primaryDarkGrey;
+
+      &:hover {
+        color: $primaryBlack;
+      }
+    }
+
+    //Кнопка со стрелкой
+    &--arrow {
+      background-color: $secondaryWhite;
+      color: $primaryDarkGrey;
+      border-color: $primaryLightGrey;
+
+      &:hover,
+      &:focus {
+        background-color: $primaryWhite;
+      }
+    }
+
+    //Кнопка с прозрачным фоном
+    &--transparent {
+      color: $primaryDarkGrey;
+
+      &:hover,
+      &:focus {
+        color: $primaryBlack;
+      }
+    }
+  }
+}

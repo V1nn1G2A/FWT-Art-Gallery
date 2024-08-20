@@ -52,8 +52,4 @@ function ThemeIcon() {
   }
 }
 
-ThemeIcon.defaultProps = {
-  theme: 'light',
-};
-
 export default ThemeIcon;

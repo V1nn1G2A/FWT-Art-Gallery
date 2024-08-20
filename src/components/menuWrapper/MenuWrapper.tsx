@@ -4,9 +4,9 @@ import { useThemeContext } from '../../hooks/useTheme/ThemeContext';
 
 import styles from './menuWrapper.module.scss';
 
-import Menu from '../../UI/Menu/Menu';
-import ButtonIcon from '../../UI/ButtonIcon/ButtonIcon';
-import ButtonText from '../../UI/ButtonText/ButtonText';
+import Menu from '../../ui-components/Menu/Menu';
+import ButtonIcon from '../../ui-components/ButtonIcon/ButtonIcon';
+import ButtonText from '../../ui-components/ButtonText/ButtonText';
 
 import ThemeIcon from '../../assets/icons/ThemeIcon';
 import Close from '../../assets/icons/Close';
@@ -22,6 +22,14 @@ function MenuWrapper({ theme, active, onClick }: MenuWrapperProps) {
   const menuRef = useOutsideClick(onClick);
 
   useNoScroll(active);
+
+  const checkWindowSize = () => {
+    if (window.innerWidth > 1024 && active) {
+      onClick();
+    }
+  };
+
+  window.addEventListener('resize', checkWindowSize);
 
   return (
     <div
@@ -39,20 +47,20 @@ function MenuWrapper({ theme, active, onClick }: MenuWrapperProps) {
           theme={theme}
           icon={<Close />}
         />
-        <ButtonText
-          variant="text"
-          onClick={toggleTheme}
-          theme={theme}
-          label={`${theme === 'light' ? 'DARK' : 'LIGHT'} MODE`.toUpperCase()}
-          icon={
-            <ButtonIcon
-              variant="themeButton"
-              onClick={toggleTheme}
-              theme={theme}
-              icon={<ThemeIcon theme={theme} />}
-            />
-          }
-        />
+        <div className={styles.menuWrapper_buttons}>
+          <ButtonIcon
+            variant="themeButton"
+            onClick={toggleTheme}
+            theme={theme}
+            icon={<ThemeIcon />}
+          />
+          <ButtonText
+            variant="text"
+            onClick={toggleTheme}
+            theme={theme}
+            label={`${theme === 'light' ? 'DARK' : 'LIGHT'} MODE`.toUpperCase()}
+          />
+        </div>
 
         <Menu theme={theme} label="Log in" />
         <Menu theme={theme} label="Sign up" />

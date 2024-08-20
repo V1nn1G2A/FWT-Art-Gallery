@@ -1,0 +1,111 @@
+@import '../../variables.scss';
+
+//Рефакторинг: Объединил стили кнопок в один файл по классам
+.buttonText {
+  font-size: $font-size-medium;
+  font-weight: $font-weight-bold;
+  cursor: pointer;
+  transition: all 0.3s ease-in-out;
+  display: flex;
+  align-items: center;
+  border: none;
+  outline: none;
+  padding: 0;
+
+  &:disabled {
+    cursor: default;
+  }
+
+  &_icon {
+    transition: all 0.3s ease-in-out;
+  }
+
+  &_label {
+    transition: all 0.3s ease-in-out;
+  }
+
+  &--primary {
+    padding: 16px 74.5px;
+    border-radius: 100px;
+    transition: all 0.3s ease-in-out;
+    cursor: pointer;
+
+    &:disabled {
+      opacity: 0.5;
+    }
+  }
+
+  &--text,
+  &--icon {
+    padding: 0;
+    background-color: transparent;
+    display: grid;
+    grid-auto-flow: column;
+    gap: 12px;
+    align-items: center;
+  }
+
+  &_label {
+    &--text {
+      border-bottom: 1px solid;
+    }
+  }
+}
+
+.buttonText--dark {
+  &.buttonText {
+    &--primary {
+      background-color: $accentGold;
+      color: $primaryWhite;
+
+      &:hover,
+      &:focus {
+        box-shadow: 0px 4px 10px 0px $accentGold;
+      }
+    }
+
+    &--text,
+    &--icon {
+      color: $primaryLightGrey;
+      border-color: $primaryLightGrey;
+
+      &:hover,
+      &:focus {
+        color: $primaryWhite;
+        border-color: $primaryWhite;
+      }
+
+      &:disabled {
+        color: $secondaryGrey;
+        border-color: $secondaryGrey;
+      }
+    }
+  }
+}
+
+.buttonText--light {
+  &.buttonText {
+    &--primary {
+      background-color: $primaryBlack;
+      color: $primaryWhite;
+      transition: all 0.3s ease-in-out;
+
+      &:hover,
+      &:focus {
+        box-shadow: 0px 4px 10px 0px $primaryBlack;
+      }
+    }
+
+    &--text,
+    &--icon {
+      color: $primaryDarkGrey;
+      border-color: $primaryDarkGrey;
+
+      &:hover,
+      &:focus {
+        color: $primaryBlack;
+        border-color: $primaryBlack;
+      }
+    }
+  }
+}

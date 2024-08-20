@@ -1,18 +1,25 @@
 import './index.scss';
 import './variables.scss';
 
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+
 import { ThemeProvider } from './hooks/useTheme/ThemeContext';
 
-import Header from './components/header/Header';
-import Footer from './components/footer/Footer';
-import NoAuthMainPage from './pages/noAuthMainPage/noAuthMainPage';
+import Header from './components/Header/Header';
+import Footer from './components/Footer/Footer';
+
+import NotAuthMainPage from './pages/NotAuthMainPage/NotAuthMainPage';
 
 function App() {
   return (
     <ThemeProvider>
-      <Header />
-      <NoAuthMainPage />
-      <Footer />
+      <Router>
+        <Header />
+        <Routes>
+          <Route path="/" element={<NotAuthMainPage />} />
+        </Routes>
+        <Footer />
+      </Router>
     </ThemeProvider>
   );
 }

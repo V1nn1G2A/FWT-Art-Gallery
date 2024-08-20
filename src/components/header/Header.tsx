@@ -3,10 +3,10 @@ import { useThemeContext } from '../../hooks/useTheme/ThemeContext';
 
 import styles from './header.module.scss';
 
-import MenuContainer from '../menuContainer/MenuContainer';
-import MenuWrapper from '../menuWrapper/MenuWrapper';
-import Logo from '../../UI/Logo/Logo';
-import ButtonIcon from '../../UI/ButtonIcon/ButtonIcon';
+import MenuContainer from '../MenuContainer/MenuContainer';
+import MenuWrapper from '../MenuWrapper/MenuWrapper';
+import Logo from '../../ui-components/Logo/Logo';
+import ButtonIcon from '../../ui-components/ButtonIcon/ButtonIcon';
 
 import LogoIcon from '../../assets/icons/Logo';
 import Burger from '../../assets/icons/Burger';
@@ -24,7 +24,7 @@ function Header() {
           <div className={styles.header_burger}>
             <ButtonIcon
               variant="transparent"
-              onClick={() => setActive(!active)}
+              onClick={() => setActive(true)}
               theme={theme}
               icon={<Burger />}
             />
@@ -33,15 +33,11 @@ function Header() {
         <MenuWrapper
           theme={theme}
           active={active}
-          onClick={() => setActive(!active)}
+          onClick={() => setActive(false)}
         />
       </div>
     </header>
   );
 }
-
-Header.defaultProps = {
-  theme: 'light',
-};
 
 export default Header;

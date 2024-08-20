@@ -2,8 +2,8 @@ import { useThemeContext } from '../../hooks/useTheme/ThemeContext';
 
 import styles from './menuContainer.module.scss';
 
-import Menu from '../../UI/Menu/Menu';
-import ButtonIcon from '../../UI/ButtonIcon/ButtonIcon';
+import Menu from '../../ui-components/Menu/Menu';
+import ButtonIcon from '../../ui-components/ButtonIcon/ButtonIcon';
 
 import ThemeIcon from '../../assets/icons/ThemeIcon';
 
@@ -21,15 +21,11 @@ function MenuContainer({ theme }: { theme?: Theme }) {
           variant="themeButton"
           onClick={toggleTheme}
           theme={theme}
-          icon={<ThemeIcon theme={theme} />}
+          icon={<ThemeIcon />}
         />
       </div>
     </div>
   );
 }
-
-MenuContainer.defaultProps = {
-  theme: 'light',
-};
 
 export default MenuContainer;

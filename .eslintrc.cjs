@@ -13,6 +13,7 @@ module.exports = {
     'plugin:prettier/recommended',
     'prettier',
     'plugin:storybook/recommended',
+    'plugin:storybook/recommended',
   ],
   parser: '@typescript-eslint/parser',
   parserOptions: {
@@ -39,6 +40,8 @@ module.exports = {
     'react/react-in-jsx-scope': 'off',
     'react/jsx-props-no-spreading': 'off',
     'react/require-default-props': 'off',
+    'react/no-array-index-key': 'off',
+    'no-underscore-dangle': 'off',
   },
   settings: {
     'import/resolver': {

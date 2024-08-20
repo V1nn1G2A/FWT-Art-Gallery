@@ -1,0 +1,22 @@
+@import '../../variables.scss';
+
+.logo {
+  width: 73px;
+  height: 16px;
+  transition: all 0.3s ease-in-out;
+}
+
+.logo--light {
+  color: $primaryDarkGrey;
+}
+
+.logo--dark {
+  color: $primaryLightGrey;
+}
+
+@media (min-width: 768px) {
+  .logo {
+    width: 91px;
+    height: 20px;
+  }
+}

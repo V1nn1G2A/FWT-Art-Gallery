@@ -1,0 +1,131 @@
+@import '../../variables.scss';
+
+.multiselect {
+  position: relative;
+
+  > *:not(.multiselect_items) {
+    z-index: 15;
+  }
+
+  &_selectedItems {
+    display: inline-block;
+    gap: 12px;
+    align-items: center;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    font-size: $font-size-large;
+    vertical-align: top;
+    width: calc(100% - 35px);
+    position: absolute;
+    top: 26px;
+    left: 0;
+
+    > * {
+      margin-right: 12px;
+    }
+
+    > *:first-child {
+      margin-left: 16px;
+    }
+  }
+
+  > button {
+    position: absolute;
+    top: 30px;
+    right: 11px;
+    transition: all 0.3s ease-in-out;
+    transform: rotate(180deg);
+  }
+
+  &_items {
+    display: none;
+    position: absolute;
+    top: 53px;
+    left: 0;
+    width: 100%;
+    max-height: 246px;
+    overflow-y: auto;
+    border: 1px solid;
+    border-radius: 4px;
+    z-index: 10;
+    padding: 12px 0;
+    margin-top: 5px;
+
+    &::-webkit-scrollbar {
+      width: 5px;
+      border-radius: 10px;
+    }
+
+    &::-webkit-scrollbar-thumb {
+      border-radius: 10px;
+    }
+  }
+
+  &_item {
+    padding: 8px 16px;
+  }
+}
+
+.multiselect--active {
+  &.multiselect {
+    & > button {
+      transform: rotate(0deg);
+      transition: all 0.3s ease-in-out;
+    }
+  }
+
+  & .multiselect_items {
+    display: block;
+  }
+}
+
+.multiselect--dark {
+  & .multiselect {
+    &_items {
+      background-color: $secondaryBlack;
+      border-color: $secondaryBlack;
+
+      &::-webkit-scrollbar-track {
+        background-color: rgb(#cdcdcd, 5%);
+      }
+
+      &::-webkit-scrollbar-thumb {
+        background-color: $primaryDarkGrey;
+      }
+    }
+
+    &_item:hover {
+      background: #cdcdcd0d;
+    }
+  }
+
+  & .multiselect--active & > input {
+    border-color: $primaryLightGrey;
+  }
+}
+
+.multiselect--light {
+  & .multiselect {
+    &_items {
+      background-color: $primaryWhite;
+      border-color: $primaryLightGrey;
+
+      &::-webkit-scrollbar-track {
+        background-color: rgb(#121212, 5%);
+      }
+
+      &::-webkit-scrollbar-thumb {
+        background-color: $secondaryGrey;
+      }
+    }
+
+    &_item:hover {
+      background: #1212120d;
+    }
+  }
+
+  &.multiselect--active > *input[type='text'] {
+    border-color: $primaryDarkGrey;
+  }
+}
