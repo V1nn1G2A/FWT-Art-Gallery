@@ -1,3 +1,5 @@
+import React from 'react';
+
 import styles from './search.module.scss';
 
 import Input, { InputProps } from '../Input/Input';
@@ -11,7 +13,7 @@ export interface SearchProps extends InputProps {
   onClear: () => void;
 }
 
-function Search({ onSearch, onClear, ...other }: SearchProps) {
+const Search: React.FC<SearchProps> = ({ onSearch, onClear, ...other }) => {
   return (
     <div className={styles.search}>
       <ButtonIcon
@@ -21,11 +23,9 @@ function Search({ onSearch, onClear, ...other }: SearchProps) {
         onClick={onSearch}
       />
       <Input
-        text={other.text}
         label=""
         placeholder={other.placeholder}
         theme={other.theme}
-        onChange={other.onChange}
         error={other.error}
       />
 
@@ -37,6 +37,6 @@ function Search({ onSearch, onClear, ...other }: SearchProps) {
       />
     </div>
   );
-}
+};
 
 export default Search;

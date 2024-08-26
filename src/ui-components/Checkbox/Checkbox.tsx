@@ -8,8 +8,11 @@ export interface CheckboxProps
   label: string;
 }
 
-// Рефакторинг: добавил Label
-function Checkbox({ theme = 'light', label, ...other }: CheckboxProps) {
+const Checkbox: React.FC<CheckboxProps> = ({
+  theme = 'light',
+  label,
+  ...other
+}) => {
   return (
     <label
       htmlFor={label}
@@ -24,6 +27,6 @@ function Checkbox({ theme = 'light', label, ...other }: CheckboxProps) {
       {label}
     </label>
   );
-}
+};
 
 export default Checkbox;

@@ -1,3 +1,5 @@
+import React from 'react';
+
 import { IPaginationProps } from '../../models/IPagination';
 
 import { usePagination, DOTS } from '../../hooks/usePagination';
@@ -7,14 +9,14 @@ import PaginationButton from './PaginationButton';
 import PaginationDots from './PaginationDots';
 import PaginationArrowButton from './PaginationArrowButton';
 
-function Pagination({
+const Pagination: React.FC<IPaginationProps> = ({
   totalCount = 60,
   siblingCount = 1,
   pageSize = 6,
   currentPage = 1,
   theme,
   onClick,
-}: IPaginationProps) {
+}) => {
   const paginationRange = usePagination({
     currentPage,
     totalCount,
@@ -58,6 +60,6 @@ function Pagination({
       />
     </ul>
   );
-}
+};
 
 export default Pagination;

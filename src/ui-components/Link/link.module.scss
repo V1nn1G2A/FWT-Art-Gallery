@@ -5,7 +5,7 @@
   margin: 0;
   text-decoration: none;
   border-bottom: 1px solid;
-  font-size: $font-size-large;
+  font-size: $font-size-medium;
   font-weight: $font-weight-light;
   transition: all 0.3s ease-in-out;
   cursor: pointer;
@@ -34,5 +34,11 @@
       color: $primaryBlack;
       border-color: $primaryBlack;
     }
+  }
+}
+
+@media (min-width: 392px) {
+  .link {
+    font-size: $font-size-large;
   }
 }

@@ -14,6 +14,14 @@ body {
   -moz-osx-font-smoothing: Greyscale;
   background-color: var(--primary-color);
   transition: background-color 0.3s ease-in-out;
+
+  &.light {
+    background-color: $primaryWhite;
+  }
+
+  &.dark {
+    background-color: $primaryBlack;
+  }
 }
 
 code {

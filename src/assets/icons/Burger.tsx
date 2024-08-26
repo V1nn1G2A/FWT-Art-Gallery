@@ -1,4 +1,6 @@
-function Burger() {
+import React from 'react';
+
+const Burger: React.FC = () => {
   return (
     <svg
       width="24"
@@ -27,6 +29,6 @@ function Burger() {
       />
     </svg>
   );
-}
+};
 
 export default Burger;

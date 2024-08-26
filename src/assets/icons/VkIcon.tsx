@@ -1,4 +1,6 @@
-function VkIcon() {
+import React from 'react';
+
+const VkIcon: React.FC = () => {
   return (
     <svg
       width="24"
@@ -13,6 +15,6 @@ function VkIcon() {
       />
     </svg>
   );
-}
+};
 
 export default VkIcon;

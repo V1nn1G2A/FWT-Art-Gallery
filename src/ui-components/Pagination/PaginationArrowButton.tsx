@@ -7,10 +7,10 @@ interface PaginationArrowButtonProps extends React.ComponentProps<'button'> {
   direction: 'prev' | 'next';
 }
 
-function PaginationArrowButton({
+const PaginationArrowButton: React.FC<PaginationArrowButtonProps> = ({
   direction,
   ...other
-}: PaginationArrowButtonProps) {
+}) => {
   return (
     <li className={styles.pagination_item}>
       <button
@@ -24,6 +24,6 @@ function PaginationArrowButton({
       </button>
     </li>
   );
-}
+};
 
 export default PaginationArrowButton;

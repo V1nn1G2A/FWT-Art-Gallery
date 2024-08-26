@@ -1,0 +1,33 @@
+@import '../../variables.scss';
+
+.artistArtworks {
+  display: flex;
+  flex-direction: column;
+  gap: 60px;
+
+  &_artTitle {
+    font-family: $font-family-cormorant;
+    font-size: $font-size-h3;
+    font-weight: $font-weight-medium;
+  }
+}
+
+.artistArtworks_artTitle--dark {
+  color: $accentGold;
+}
+
+.artistArtworks_artTitle--light {
+  color: $accentRed;
+}
+
+@media (min-width: 392px) {
+  .artistArtworks_artTitle {
+    font-size: $font-size-h1;
+  }
+}
+
+@media (min-width: 768px) {
+  .artistArtworks_artTitle {
+    margin-left: 60px;
+  }
+}

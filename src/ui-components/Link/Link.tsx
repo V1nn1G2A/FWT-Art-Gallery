@@ -1,16 +1,21 @@
+import React from 'react';
+
 import {
   Link as RouterLink,
   LinkProps as RouterLinkProps,
 } from 'react-router-dom';
 import styles from './link.module.scss';
 
-// Обновленный интерфейс для использования LinkProps из react-router-dom
 export interface CustomLinkProps extends RouterLinkProps {
   label?: string;
   theme?: 'light' | 'dark';
 }
 
-function Link({ label = '', theme = 'light', ...other }: CustomLinkProps) {
+const Link: React.FC<CustomLinkProps> = ({
+  label = '',
+  theme = 'light',
+  ...other
+}) => {
   return (
     <RouterLink
       className={`${styles.link} ${styles[`link--${theme}`]}`}
@@ -19,6 +24,6 @@ function Link({ label = '', theme = 'light', ...other }: CustomLinkProps) {
       {label}
     </RouterLink>
   );
-}
+};
 
 export default Link;

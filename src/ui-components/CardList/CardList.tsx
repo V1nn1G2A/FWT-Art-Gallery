@@ -1,5 +1,7 @@
+import React from 'react';
+
 import Card, { CardProps } from '../Card/Card';
-import SkeletonCard from '../Card/SkeletonCard/SkeletonCard';
+import SkeletonList from './SkeletonList/SkeletonList';
 
 import styles from './cardList.module.scss';
 
@@ -10,20 +12,14 @@ export interface CardListProps {
   theme?: 'light' | 'dark';
 }
 
-export default function CardList({
+const CardList: React.FC<CardListProps> = ({
   cards,
   isLoading,
   errorMessage,
   theme,
-}: CardListProps) {
+}) => {
   if (isLoading) {
-    return (
-      <ul className={styles.cardList}>
-        {[...new Array(6)].map((_, index) => (
-          <SkeletonCard key={index} theme={theme} />
-        ))}
-      </ul>
-    );
+    return <SkeletonList theme={theme} />;
   }
 
   if (errorMessage) {
@@ -31,7 +27,7 @@ export default function CardList({
   }
 
   return (
-    <ul className={styles.cardList}>
+    <section className={styles.cardList}>
       {cards.length ? (
         cards.map((card) => (
           <Card key={card.image.original} {...card} theme={theme} />
@@ -54,6 +50,8 @@ export default function CardList({
           </span>
         </div>
       )}
-    </ul>
+    </section>
   );
-}
+};
+
+export default CardList;

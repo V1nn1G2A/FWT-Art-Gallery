@@ -1,6 +1,13 @@
-function MultiselectArrow() {
+import React from 'react';
+
+interface MultiselectArrowProps {
+  style?: React.CSSProperties;
+}
+
+const MultiselectArrow: React.FC<MultiselectArrowProps> = ({ style }) => {
   return (
     <svg
+      style={style}
       width="24"
       height="24"
       viewBox="0 0 24 24"
@@ -10,6 +17,6 @@ function MultiselectArrow() {
       <path d="M12 9L6.80385 14.25L17.1962 14.25L12 9Z" fill="currentColor" />
     </svg>
   );
-}
+};
 
 export default MultiselectArrow;

@@ -1,0 +1,51 @@
+.modal {
+  position: fixed;
+  height: 100vh;
+  width: 100vw;
+  top: 0;
+  left: 0;
+  z-index: 10;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: all 0.3s ease-in-out;
+  animation: loading 0.3s ease-in-out;
+
+  &--reverse {
+    animation: loadingReverse 0.3s ease-in-out;
+    opacity: 0;
+  }
+
+  &--dark {
+    background-color: #03030399;
+  }
+
+  &--light {
+    background-color: #0303034d;
+  }
+
+  &_content {
+    display: flex;
+    align-self: center;
+    width: max-content;
+    height: max-content;
+  }
+}
+
+@keyframes loading {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes loadingReverse {
+  from {
+    opacity: 1;
+  }
+  to {
+    opacity: 0;
+  }
+}

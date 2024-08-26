@@ -9,14 +9,16 @@ export interface ErrorLabelProps
   text?: string;
 }
 
-// Рефакторинг: изменил label на span
-function ErrorLabel({ text = 'Error message', ...other }: ErrorLabelProps) {
+const ErrorLabel: React.FC<ErrorLabelProps> = ({
+  text = 'Error message',
+  ...other
+}) => {
   return (
     <span className={styles.errorMessage} {...other}>
       <Error />
       {text}
     </span>
   );
-}
+};
 
 export default ErrorLabel;

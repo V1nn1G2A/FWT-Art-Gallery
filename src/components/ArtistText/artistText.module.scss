@@ -1,0 +1,214 @@
+@import '../../variables.scss';
+
+.artistText {
+  display: flex;
+  flex-direction: column;
+  align-items: start;
+  margin: 334px 0 60px;
+
+  &_info {
+    width: 100%;
+    max-width: 560px;
+    padding: 20px 0;
+    display: flex;
+    justify-content: space-between;
+    flex-direction: column;
+    flex-wrap: wrap;
+    font-family: $font-family-cormorant;
+    transition: all 0.3s ease-in-out;
+  }
+
+  &_dates,
+  &_birthplace {
+    font-size: $font-size-medium;
+    font-weight: $font-weight-light;
+    transition: all 0.3s ease-in-out;
+    padding: 0 20px;
+  }
+
+  &_dates {
+    order: 1;
+    margin-bottom: 8px;
+  }
+
+  &_birthplace {
+    order: 3;
+    margin-top: 8px;
+  }
+
+  &_name {
+    position: relative;
+    font-size: $font-size-h3;
+    font-weight: $font-weight-light;
+    order: 2;
+    width: 100%;
+    transition: all 0.3s ease-in-out;
+    padding: 0 20px;
+
+    &::before {
+      transition: all 0.3s ease-in-out;
+    }
+  }
+
+  &_genres {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px 8px;
+    padding: 0 20px;
+  }
+}
+
+.artistText--dark {
+  & .artistText {
+    &_info {
+      background-color: $primaryBlack;
+    }
+
+    &_dates {
+      color: $secondaryGrey;
+    }
+
+    &_birthplace {
+      color: $secondaryGrey;
+    }
+
+    &_name {
+      color: $accentGold;
+      border-color: $accentGold;
+
+      &::before {
+        background-color: $accentRed;
+      }
+    }
+
+    &_genres {
+      background-color: $primaryBlack;
+    }
+  }
+}
+
+.artistText--light {
+  & .artistText {
+    &_info {
+      background-color: $primaryWhite;
+    }
+
+    &_dates {
+      color: $primaryDarkGrey;
+    }
+
+    &_birthplace {
+      color: $primaryDarkGrey;
+    }
+
+    &_name {
+      color: $accentRed;
+
+      &::before {
+        background-color: $accentRed;
+      }
+    }
+
+    &_genres {
+      background-color: $primaryWhite;
+    }
+  }
+}
+
+@media (min-width: 392px) {
+  .artistText {
+    margin: 50% 0 98px;
+
+    &_info {
+      flex-direction: row;
+      max-width: 560px;
+    }
+
+    &_birthplace {
+      order: 2;
+      font-size: $font-size-large;
+      margin: 0 0 12px;
+    }
+
+    &_dates {
+      font-size: $font-size-large;
+      margin: 0 0 12px;
+    }
+
+    &_name {
+      order: 3;
+      font-size: $font-size-h2;
+      padding-bottom: 20px;
+
+      &::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        left: -20px;
+        border-left: 2px solid;
+      }
+    }
+
+    &_genres {
+      gap: 20px;
+    }
+  }
+}
+
+@media (min-width: 432px) {
+  .artistText_info {
+    max-width: 560px;
+  }
+}
+
+@media (min-width: 768px) {
+  .artistText {
+    &_info {
+      max-width: 604px;
+    }
+
+    &_name {
+      font-size: $font-size-h1;
+    }
+  }
+}
+
+@media (min-width: 1024px) {
+  .artistText {
+    margin-bottom: 47px;
+    max-width: 604px;
+    margin: 60px auto 100px 47px;
+    padding: 60px 80px;
+
+    &--dark {
+      background-color: $primaryBlack;
+    }
+
+    &--light {
+      background-color: $primaryWhite;
+    }
+
+    &_info {
+      padding: 0 0 32px;
+    }
+
+    &_birthplace,
+    &_dates {
+      margin-bottom: 32px;
+    }
+
+    &_name {
+      order: 3;
+      font-size: $font-size-h2;
+      padding: 0;
+      &::before {
+        left: -80px;
+      }
+    }
+
+    &_genres {
+      padding: 0;
+    }
+  }
+}

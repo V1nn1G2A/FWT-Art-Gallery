@@ -1,4 +1,4 @@
-import { useState, useEffect } from 'react';
+import React, { useState, useEffect } from 'react';
 
 import styles from './toast.module.scss';
 
@@ -14,7 +14,11 @@ export interface ToastProps {
   onClick: () => void;
 }
 
-function Toast({ error, theme = 'light', onClick }: ToastProps) {
+const Toast: React.FC<ToastProps> = ({
+  error,
+  theme = 'light',
+  onClick,
+}: ToastProps) => {
   const [isClose, setClose] = useState(false);
 
   const checkWindowSize = () => {
@@ -46,6 +50,6 @@ function Toast({ error, theme = 'light', onClick }: ToastProps) {
       />
     </div>
   );
-}
+};
 
 export default Toast;

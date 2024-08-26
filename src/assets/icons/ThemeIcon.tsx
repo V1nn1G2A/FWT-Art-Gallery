@@ -1,6 +1,8 @@
+import React from 'react';
+
 import { useThemeContext } from '../../hooks/useTheme/ThemeContext';
 
-function ThemeIcon() {
+const ThemeIcon: React.FC = () => {
   const { theme } = useThemeContext();
 
   switch (theme) {
@@ -50,6 +52,6 @@ function ThemeIcon() {
         </svg>
       );
   }
-}
+};
 
 export default ThemeIcon;

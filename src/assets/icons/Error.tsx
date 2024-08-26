@@ -1,4 +1,6 @@
-function Error() {
+import React from 'react';
+
+const Error: React.FC = () => {
   return (
     <svg
       width="24"
@@ -13,6 +15,6 @@ function Error() {
       />
     </svg>
   );
-}
+};
 
 export default Error;

@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import React, { useState } from 'react';
 
 import styles from './filterItem.module.scss';
 
@@ -8,12 +8,12 @@ export interface FilterItemProps {
   onClick: () => void;
 }
 
-function FilterItem({
+const FilterItem: React.FC<FilterItemProps> = ({
   label,
   theme = 'light',
   onClick,
   ...other
-}: FilterItemProps) {
+}) => {
   const [selected, setSelected] = useState(false);
 
   return (
@@ -31,6 +31,6 @@ function FilterItem({
       {label}
     </button>
   );
-}
+};
 
 export default FilterItem;

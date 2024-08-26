@@ -1,4 +1,6 @@
-function SearchIcon() {
+import React from 'react';
+
+const SearchIcon: React.FC = () => {
   return (
     <svg
       width="24"
@@ -13,6 +15,6 @@ function SearchIcon() {
       />
     </svg>
   );
-}
+};
 
 export default SearchIcon;
