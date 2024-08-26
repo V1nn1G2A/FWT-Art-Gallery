@@ -1,0 +1,32 @@
+.artistAvatar {
+  position: absolute;
+  top: 0;
+  right: 0;
+  z-index: -1;
+  height: auto;
+  width: 100%;
+  aspect-ratio: 320 / 452;
+
+  &_image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+  }
+}
+
+@media (min-width: 392px) {
+  .artistAvatar {
+    aspect-ratio: 768 / 500;
+  }
+}
+
+@media (min-width: 1111px) {
+}
+
+@media (min-width: 1024px) {
+  .artistAvatar {
+    width: 70%;
+    aspect-ratio: none;
+  }
+}

@@ -4,15 +4,15 @@ import styles from './logo.module.scss';
 
 export interface LogoProps {
   theme?: 'light' | 'dark';
-  logoSVG: React.ReactNode; // ReactNode позволяет передавать любые элементы React
+  logoSVG: React.ReactNode;
 }
 
-function Logo({ theme = 'light', logoSVG }: LogoProps) {
+const Logo: React.FC<LogoProps> = ({ theme = 'light', logoSVG }) => {
   return (
     <Link to="/" className={`${styles.logo} ${styles[`logo--${theme}`]}`}>
-      {logoSVG} {/* Отображение SVG внутри ссылки */}
+      {logoSVG}
     </Link>
   );
-}
+};
 
 export default Logo;

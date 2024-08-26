@@ -1,4 +1,6 @@
-function InstagramIcon() {
+import React from 'react';
+
+const InstagramIcon: React.FC = () => {
   return (
     <svg
       width="24"
@@ -32,6 +34,6 @@ function InstagramIcon() {
       </defs>
     </svg>
   );
-}
+};
 
 export default InstagramIcon;

@@ -7,7 +7,6 @@
   aspect-ratio: 280 / 185;
   justify-self: center;
   align-self: center;
-  cursor: pointer;
   overflow: hidden;
 
   &_image {
@@ -18,6 +17,8 @@
     height: 100%;
     object-fit: cover;
     transition: transform 0.3s ease-in-out;
+    cursor: pointer;
+    z-index: -1;
 
     &:hover {
       transform: scale(1.03);
@@ -38,6 +39,16 @@
     transition: all 0.3s ease-in-out;
   }
 
+  &_linkOverlay::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    transition: transform 0.3s ease-in-out;
+  }
+
   &_title {
     font-size: $font-size-medium;
     font-family: $font-family-cormorant;
@@ -47,6 +58,7 @@
     transition: all 0.3s ease;
     box-sizing: border-box;
     margin: 0 0 4px;
+    cursor: pointer;
   }
 
   &_subTitle {
@@ -73,6 +85,7 @@
     align-items: center;
     padding: 0 3px 0 5px;
     transition: all 0.3s ease-in-out;
+    color: $primaryLightGrey;
 
     & svg {
       transform: rotate(0deg);
@@ -130,7 +143,7 @@
   }
 }
 
-@media (min-width: 492px) {
+@media (min-width: 392px) {
   .card {
     aspect-ratio: 352 / 220;
 

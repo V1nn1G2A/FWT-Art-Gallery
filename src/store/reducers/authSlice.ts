@@ -1,34 +1,34 @@
 import { createSlice, PayloadAction } from '@reduxjs/toolkit';
+import Cookie from 'js-cookie';
 
 export interface AuthState {
-  refreshToken: string;
   accessToken: string;
+  isAuth: boolean;
 }
 
 const initialState: AuthState = {
-  refreshToken: '',
   accessToken: '',
+  isAuth: false,
 };
 
 const authSlice = createSlice({
   name: 'auth',
   initialState,
   reducers: {
-    setToken: (
-      state,
-      action: PayloadAction<{ accessToken: string; refreshToken: string }>
-    ) => {
+    setToken: (state, action: PayloadAction<string>) => {
       return {
         ...state,
-        accessToken: action.payload.accessToken,
-        refreshToken: action.payload.refreshToken,
+        accessToken: action.payload,
+        isAuth: true,
       };
     },
     clearToken: (state) => {
+      Cookie.remove('refreshToken');
+
       return {
         ...state,
         accessToken: '',
-        refreshToken: '',
+        isAuth: false,
       };
     },
   },

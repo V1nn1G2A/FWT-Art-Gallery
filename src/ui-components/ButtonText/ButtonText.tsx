@@ -12,20 +12,22 @@ export interface ButtonTextProps
   extends React.ButtonHTMLAttributes<HTMLButtonElement> {
   label?: string;
   variant?: Variant;
-  theme: Theme;
+  theme?: Theme;
   icon?: React.ReactNode;
+  iconPosition?: 'left' | 'right';
 }
 
-function ButtonText({
+const ButtonText: React.FC<ButtonTextProps> = ({
   label = 'ButtonText',
   variant = 'text',
   theme,
   icon: PlusSmallIcon = <PlusSmall />,
+  iconPosition = 'left',
   ...other
-}: ButtonTextProps) {
+}) => {
   return (
     <button
-      className={`${styles.buttonText} ${styles[`buttonText--${variant}`]} ${styles[`buttonText--${theme}`]} `}
+      className={`${styles.buttonText} ${styles[`buttonText--${variant}`]} ${styles[`buttonText--${theme}`]} ${styles[`buttonText--${iconPosition}`]}`}
       {...other}
       type="button"
     >
@@ -44,6 +46,6 @@ function ButtonText({
       </span>
     </button>
   );
-}
+};
 
 export default ButtonText;

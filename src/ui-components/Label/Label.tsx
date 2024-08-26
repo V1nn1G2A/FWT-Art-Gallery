@@ -9,7 +9,12 @@ export interface LabelProps
   htmlFor: string;
 }
 
-function Label({ theme = 'light', label, htmlFor, ...other }: LabelProps) {
+const Label: React.FC<LabelProps> = ({
+  theme = 'light',
+  label,
+  htmlFor,
+  ...other
+}) => {
   return (
     <label
       htmlFor={htmlFor}
@@ -19,6 +24,6 @@ function Label({ theme = 'light', label, htmlFor, ...other }: LabelProps) {
       {label}
     </label>
   );
-}
+};
 
 export default Label;

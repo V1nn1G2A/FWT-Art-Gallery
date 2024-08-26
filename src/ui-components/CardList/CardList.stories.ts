@@ -16,7 +16,6 @@ const meta: Meta<typeof CardList> = {
 export default meta;
 type Story = StoryObj<CardListProps>;
 
-// тестовые пропсы, удалить при подключении запросов
 const defaultProps: CardProps = {
   _id: 'https://test-front.framework.team/images/The_ninth_wave.jpeg',
   name: 'The ninth wave',

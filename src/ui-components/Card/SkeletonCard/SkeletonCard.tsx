@@ -7,7 +7,7 @@ interface SkeletonCardProps {
 
 function SkeletonCard({ theme = 'light' }: SkeletonCardProps) {
   return (
-    <li
+    <article
       className={`${pictureStyles.card} ${styles.skeleton} ${styles[`skeleton--${theme}`]}`}
     >
       <div className={styles.card_imageSkeleton} />
@@ -15,7 +15,7 @@ function SkeletonCard({ theme = 'light' }: SkeletonCardProps) {
         <div className={styles.card_titleSkeleton} />
         <div className={styles.card_subTitleSkeleton} />
       </div>
-    </li>
+    </article>
   );
 }
 

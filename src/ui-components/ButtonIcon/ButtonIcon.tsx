@@ -19,13 +19,13 @@ export interface ButtonIconProps
   icon: React.ReactNode;
 }
 
-function ButtonIcon({
+const ButtonIcon: React.FC<ButtonIconProps> = ({
   variant = 'basket',
   theme = 'light',
   onClick,
   icon,
   ...other
-}: ButtonIconProps) {
+}) => {
   return (
     <button
       className={`${styles.buttonIcon} ${styles[`buttonIcon--${variant}`]} ${styles[`buttonIcon--${theme}`]} `}
@@ -40,6 +40,6 @@ function ButtonIcon({
       </span>
     </button>
   );
-}
+};
 
 export default ButtonIcon;

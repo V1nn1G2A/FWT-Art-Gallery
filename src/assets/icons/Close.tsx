@@ -1,4 +1,6 @@
-function Close() {
+import React from 'react';
+
+const Close: React.FC = () => {
   return (
     <svg
       width="24"
@@ -15,6 +17,6 @@ function Close() {
       />
     </svg>
   );
-}
+};
 
 export default Close;

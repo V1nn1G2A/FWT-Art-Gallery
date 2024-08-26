@@ -1,21 +1,20 @@
-// Возможно  объединить в будущем с Link
-
 import React from 'react';
+
+import { Link, LinkProps } from 'react-router-dom';
 
 import styles from './menu.module.scss';
 
-export interface MenuProps
-  extends React.AnchorHTMLAttributes<HTMLAnchorElement> {
+export interface MenuProps extends LinkProps {
   theme?: 'light' | 'dark';
   label: string;
 }
 
-function Menu({ label, theme = 'light', ...other }: MenuProps) {
+const Menu: React.FC<MenuProps> = ({ label, theme = 'light', ...other }) => {
   return (
-    <a className={`${styles.menu} ${styles[`menu--${theme}`]}`} {...other}>
+    <Link className={`${styles.menu} ${styles[`menu--${theme}`]}`} {...other}>
       {label.toUpperCase()}
-    </a>
+    </Link>
   );
-}
+};
 
 export default Menu;

@@ -14,6 +14,7 @@ module.exports = {
     'prettier',
     'plugin:storybook/recommended',
     'plugin:storybook/recommended',
+    'plugin:storybook/recommended',
   ],
   parser: '@typescript-eslint/parser',
   parserOptions: {
@@ -42,6 +43,7 @@ module.exports = {
     'react/require-default-props': 'off',
     'react/no-array-index-key': 'off',
     'no-underscore-dangle': 'off',
+    'react/function-component-definition': 'off',
   },
   settings: {
     'import/resolver': {

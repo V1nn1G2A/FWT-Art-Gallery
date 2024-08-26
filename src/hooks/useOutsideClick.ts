@@ -7,11 +7,11 @@ const useOutsideClick = (callback: () => void) => {
     const handleClick = (event: MouseEvent) => {
       if (ref.current && !ref.current.contains(event.target as Node)) {
         callback();
+        callback();
       }
     };
 
     document.addEventListener('mousedown', handleClick);
-    // Рефакторинг: короткая запись стрелки
     return () => document.removeEventListener('mousedown', handleClick);
   }, [callback]);
 

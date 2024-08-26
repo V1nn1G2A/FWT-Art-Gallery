@@ -1,3 +1,5 @@
+import React from 'react';
+
 import styles from './tagSelector.module.scss';
 
 import ButtonIcon from '../ButtonIcon/ButtonIcon';
@@ -10,8 +12,12 @@ export interface TagSelectorProps {
   onClick?: () => void;
   theme?: 'light' | 'dark';
 }
-
-function TagSelector({ text, variant, onClick, theme }: TagSelectorProps) {
+const TagSelector: React.FC<TagSelectorProps> = ({
+  text,
+  variant,
+  onClick,
+  theme,
+}: TagSelectorProps) => {
   return (
     <span
       className={`${styles.tagSelector} ${styles[`tagSelector--${theme}`]}`}
@@ -27,6 +33,6 @@ function TagSelector({ text, variant, onClick, theme }: TagSelectorProps) {
       )}
     </span>
   );
-}
+};
 
 export default TagSelector;

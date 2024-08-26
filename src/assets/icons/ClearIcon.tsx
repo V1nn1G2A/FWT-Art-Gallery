@@ -1,4 +1,6 @@
-function ClearIcon() {
+import React from 'react';
+
+const ClearIcon: React.FC = () => {
   return (
     <svg
       width="12"
@@ -13,6 +15,6 @@ function ClearIcon() {
       />
     </svg>
   );
-}
+};
 
 export default ClearIcon;

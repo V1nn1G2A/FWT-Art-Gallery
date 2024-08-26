@@ -7,11 +7,11 @@ interface PaginationButtonProps extends React.ComponentProps<'button'> {
   isActive: boolean;
 }
 
-function PaginationButton({
+const PaginationButton: React.FC<PaginationButtonProps> = ({
   pageNumber,
   isActive,
   ...other
-}: PaginationButtonProps) {
+}) => {
   return (
     <li className={styles.pagination_item}>
       <button
@@ -23,6 +23,6 @@ function PaginationButton({
       </button>
     </li>
   );
-}
+};
 
 export default PaginationButton;

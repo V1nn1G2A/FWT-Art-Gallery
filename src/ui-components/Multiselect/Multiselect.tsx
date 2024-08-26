@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import React, { useState } from 'react';
 import styles from './multiselect.module.scss';
 
 import ButtonIcon from '../ButtonIcon/ButtonIcon';
@@ -19,13 +19,13 @@ export interface MultiselectProps {
   onSelectedItemsChange: (selectedItems: string[]) => void;
 }
 
-function Multiselect({
+const Multiselect: React.FC<MultiselectProps> = ({
   items,
   theme = 'light',
   label,
   selectedItems,
   onSelectedItemsChange,
-}: MultiselectProps) {
+}) => {
   const [inputValue, setInputValue] = useState<string>('');
   const [activeItems, setActiveSelectedItems] = useState(false);
 
@@ -98,6 +98,6 @@ function Multiselect({
       </ul>
     </div>
   );
-}
+};
 
 export default Multiselect;

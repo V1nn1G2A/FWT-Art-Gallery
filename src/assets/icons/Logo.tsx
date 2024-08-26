@@ -1,4 +1,6 @@
-function LogoSVG() {
+import React from 'react';
+
+const LogoSVG: React.FC = () => {
   return (
     <svg
       width="91"
@@ -61,6 +63,6 @@ function LogoSVG() {
       />
     </svg>
   );
-}
+};
 
 export default LogoSVG;

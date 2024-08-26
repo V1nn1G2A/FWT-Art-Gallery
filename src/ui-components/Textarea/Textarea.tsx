@@ -14,13 +14,13 @@ export interface TextareaProps
   onChange: () => void;
 }
 
-function Textarea({
+const Textarea: React.FC<TextareaProps> = ({
   label,
   theme = 'light',
   error = '',
   onChange,
   ...other
-}: TextareaProps) {
+}) => {
   return (
     <>
       <Label label={label} htmlFor={label} theme={theme} />
@@ -31,9 +31,9 @@ function Textarea({
         {...other}
       />
 
-      {error && <ErrorLabel text={error} htmlFor={label} />}
+      {error && <ErrorLabel text={error} />}
     </>
   );
-}
+};
 
 export default Textarea;

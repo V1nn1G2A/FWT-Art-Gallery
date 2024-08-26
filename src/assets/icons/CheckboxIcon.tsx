@@ -1,4 +1,6 @@
-function CheckboxIcon() {
+import React from 'react';
+
+const CheckboxIcon: React.FC = () => {
   return (
     <svg
       width="18"
@@ -15,6 +17,6 @@ function CheckboxIcon() {
       />
     </svg>
   );
-}
+};
 
 export default CheckboxIcon;

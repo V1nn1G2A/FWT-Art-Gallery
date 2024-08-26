@@ -1,0 +1,80 @@
+@import '../../variables.scss';
+
+.artistBiography {
+  font-size: $font-size-large;
+  line-height: 22.4px;
+  text-align: justified;
+  width: 100%;
+  padding: 20px 20px;
+  position: relative;
+  transition: all 0.3s ease-in-out;
+
+  &_text {
+    transition: all 0.3s ease-in-out;
+  }
+
+  > button {
+    margin: 20px 0 12px;
+  }
+}
+
+.artistBiography--dark {
+  color: $primaryLightGrey;
+  background-color: $primaryBlack;
+
+  &::before {
+    background-color: $primaryLightGrey;
+  }
+
+  & .artistBiography_text {
+    mask-image: linear-gradient(
+      180deg,
+      #dedede 0%,
+      rgba(222, 222, 222, 0.4) 100%
+    );
+    transition: all 0.3s ease;
+
+    &--expanded {
+      mask-image: none;
+    }
+  }
+}
+
+.artistBiography--light {
+  color: $primaryDarkGrey;
+  background-color: $primaryWhite;
+
+  &::before {
+    background-color: $primaryDarkGrey;
+  }
+
+  & .artistBiography_text {
+    mask-image: linear-gradient(180deg, #575757 0%, rgba(87, 87, 87, 0.4) 100%);
+    transition: all 0.3s ease;
+
+    &--expanded {
+      mask-image: none;
+    }
+  }
+}
+
+@media (min-width: 392px) {
+  .artistBiography {
+    padding-top: 40px;
+  }
+}
+
+@media (min-width: 1024px) {
+  .artistBiography {
+    padding: 20px 0;
+
+    &::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 30px;
+      height: 2px;
+    }
+  }
+}
